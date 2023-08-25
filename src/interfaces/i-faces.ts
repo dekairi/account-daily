@@ -7,10 +7,17 @@ export interface GeneralLedgerEntry {
   referenceId: string;
 }
 
+export interface GeneralLedgerEntryPart {
+  posted: string;
+  debitAccountId: string;
+  creditAccountId: string;
+  amount: number;
+}
+
 export interface AccountDaily {
   date: string;
   debitDayTotal: number;
   creditDayTotal: number;
 }
 
-export type AccountDailyReducer = (accountId: string, ledger: unknown) => AccountDaily[];
+export type AccountDailyReducer = (accountId: string, ledger: unknown[]) => AccountDaily[];
